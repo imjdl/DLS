@@ -59,7 +59,6 @@ class DNSserver(socketserver.BaseRequestHandler):
         try:
             request = DNSRecord.parse(data)
             res = self.dnsresponce(request)
-            self.savelog(request)
             sock.sendto(bytes(res.pack()), self.client_address)
             self.savelog(request)
         except Exception:

@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DLS</title>
+    <link rel="stylesheet" href={% static "dnslog/css/bootstrap.min.css"%}>
+</head>
+<body>
+<nav class="navbar navbar-expand-sm bg-dark fixed-top">
+  <ul class="navbar-nav">
+      <li class="nav-item navbar-brand">
+          <span class="text-white">DNSLOG 平台</span>
+      </li>
+  </ul>
+</nav>
+<br>
+<br>
+<br>
+<div class="container">
+{% csrf_token %}
+{% if not logdata %}
+    <div class="container">
+        <h1 class="text-info text-center">Sorry no data!!</h1>
+    </div>
+{% else %}
+    <table class="table">
+    <caption>DNSLOG平台</caption>
+    <thead>
+        <tr>
+            <th>IP</th>
+            <th>qname</th>
+            <th>qtype</th>
+            <th>时间</th>
+        </tr>
+    </thead>
+    <tbody id="dns_id">
+        {% for log in logdata %}
+        <tr>
+            <td>{{ log.IP }}</td>
+            <td>{{ log.text }}</td>
+            <td>{{ log.qtype }}</td>
+            <td>{{ log.recvdate }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+{% endif %}
+</div>
+</body>
+<script src={% static 'dnslog/js/jquery-3.3.1.min.js' %}></script>
+<script src={% static 'dnslog/js/popper.min.js' %}></script>
+<script src={% static "dnslog/js/bootstrap.min.js" %}></script>
+<script src="{% static 'dnslog/js/getdata.js' %}"></script>
+</html>
