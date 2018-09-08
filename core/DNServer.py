@@ -1,5 +1,6 @@
 import socketserver
 
+from django.conf import settings
 from dnslib import *
 from dnslog.models import Log
 """
@@ -85,7 +86,7 @@ class DNSserver(socketserver.BaseRequestHandler):
 
 
 def dnsserver():
-    with socketserver.ForkingUDPServer(('127.0.0.1', 10086), DNSserver) as s:
+    with socketserver.ForkingUDPServer((settings.DNSHOST, settings.DNSPORT), DNSserver) as s:
         s.serve_forever()
 
 
