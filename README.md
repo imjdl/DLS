@@ -27,4 +27,3 @@ pip install requerments.txt
 4. 访问 http://youip:8080
 
 注：执行`python manage.py DNServerd --run stop` 关闭DNS Server
-# 截图
