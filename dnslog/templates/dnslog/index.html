@@ -17,36 +17,9 @@
 <br>
 <br>
 <br>
-<div class="container">
+<button class="btn btn-warning" onclick="clear_log()">清空</button>
 {% csrf_token %}
-{% if not logdata %}
-    <div class="container">
-        <h1 class="text-info text-center">Sorry no data!!</h1>
-    </div>
-{% else %}
-    <table class="table">
-    <caption>DNSLOG平台</caption>
-    <thead>
-        <tr>
-            <th>IP</th>
-            <th>qname</th>
-            <th>qtype</th>
-            <th>时间</th>
-        </tr>
-    </thead>
-    <tbody id="dns_id">
-        {% for log in logdata %}
-        <tr>
-            <td>{{ log.IP }}</td>
-            <td>{{ log.text }}</td>
-            <td>{{ log.qtype }}</td>
-            <td>{{ log.recvdate }}</td>
-        </tr>
-        {% endfor %}
-    </tbody>
-    </table>
-{% endif %}
-</div>
+<div class="container" id="dnslog"></div>
 </body>
 <script src={% static 'dnslog/js/jquery-3.3.1.min.js' %}></script>
 <script src={% static 'dnslog/js/popper.min.js' %}></script>
