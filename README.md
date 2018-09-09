@@ -14,7 +14,7 @@ pip install requerments.txt
 # 使用
 1. 启动DNS服务
 
-     在settings.py 里将DNSHOST改为你的服务器IP
+     在settings.py 里将DNSHOST改为你的VPS IP
      
     `python manage.py DNServerd --run start`
 2. 迁移数据
