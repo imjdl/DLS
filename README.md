@@ -22,7 +22,7 @@ pip install requerments.txt
     `python manage.py migrate`
 3. 启动Web页面
 
-    `python manage.py runserver 8080`
+    `python manage.py runserver 0.0.0.0:8080`
 
 4. 访问 http://youip:8080
 
