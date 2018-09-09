@@ -13,13 +13,18 @@ pip install requerments.txt
 ```
 # 使用
 1. 启动DNS服务
-    
+
+     在settings.py 里将DNSHOST改为你的服务器IP
+     
     `python manage.py DNServerd --run start`
-2. 启动Web页面
+2. 迁移数据
+    
+    `python manage.py migrate`
+3. 启动Web页面
 
     `python manage.py runserver 8080`
 
-3. 访问 http://youip:8080
+4. 访问 http://youip:8080
 
 注：执行`python manage.py DNServerd --run stop` 关闭DNS Server
 # 截图
