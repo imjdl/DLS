@@ -125,4 +125,4 @@ STATIC_URL = '/static/'
 
 DNSHOST = '127.0.0.1'
 
-DNSPORT = 10086
+DNSPORT = 53
