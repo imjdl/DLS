@@ -123,8 +123,8 @@ STATIC_URL = '/static/'
 
 # customize value
 
-# YOU host
+# YOU HOST IP
 DNSHOST = '127.0.0.1'
 
-# You port
+# YOU HOST PORT
 DNSPORT = 53
