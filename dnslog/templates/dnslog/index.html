@@ -12,14 +12,29 @@
       <li class="nav-item navbar-brand">
           <span class="text-white">DNSLOG 平台</span>
       </li>
+      <li class="nav-item navbar-brand">
+          <button class="btn btn-warning" onclick="clear_log()">清空</button>
+      </li>
   </ul>
 </nav>
 <br>
 <br>
 <br>
-<button class="btn btn-warning" onclick="clear_log()">清空</button>
 {% csrf_token %}
-<div class="container" id="dnslog"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-9" id="dnslog"></div>
+        <div class="col-3 border-left">
+            <h3 class="text-center text-info">16进制解码</h3>
+            <textarea class="form-control" rows="5" id="decodehex"></textarea>
+            <br>
+            <div class="text-center">
+                <button class="btn btn-info" onclick="decode_hex()">解码</button>
+                <button class="btn btn-danger" onclick="clear_hex()">清空</button>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 <script src={% static 'dnslog/js/jquery-3.3.1.min.js' %}></script>
 <script src={% static 'dnslog/js/popper.min.js' %}></script>

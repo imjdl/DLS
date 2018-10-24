@@ -15,11 +15,13 @@ function strtojson(str) {
     var json = (new Function("return " + str))();
     return json;
 }
+
 function clear_log() {
     var xmlhttp = getXmlHttp();
     xmlhttp.open("GET",'/index/deldata', true);
     xmlhttp.send();
 }
+
 function getLogdata() {
     var xmlhttp = getXmlHttp();
     var dnslog = document.getElementById('dnslog');
@@ -66,3 +68,26 @@ function getLogdata() {
 }
 
 var handler = setInterval(getLogdata, 1000);
+
+function clear_hex() {
+    document.getElementById("decodehex").value="";
+}
+
+// 16进制转字符串
+function decode_hex() {
+    var val = document.getElementById("decodehex").value;
+    var trimedStr = val.trim();
+　　 var rawStr = trimedStr.substr(0,2).toLowerCase() === "0x"?trimedStr.substr(2):trimedStr;
+    var len = rawStr.length;
+　　 if(len % 2 !== 0) {
+　　　　alert("Illegal Format ASCII Code!");
+　　　　return "";
+　　 }
+　　 var curCharCode;
+　　 var resultStr = [];
+　　 for(var i = 0; i < len;i = i + 2) {
+　　　　curCharCode = parseInt(rawStr.substr(i, 2), 16); // ASCII Code Value
+　　　　resultStr.push(String.fromCharCode(curCharCode));
+　　 }
+    document.getElementById("decodehex").value = resultStr.join("");
+}
