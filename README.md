@@ -33,3 +33,7 @@ pip install requerments.txt
 2018年10月24日：添加，16进制解码功能。
 ![](demo/Selection_222.png)
 ![](demo/Selection_223.png)
+
+# 相关文章
+
+https://blog.0dayhub.ga/2018/10/24/DNS-LOG/
