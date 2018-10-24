@@ -27,3 +27,9 @@ pip install requerments.txt
 4. 访问 http://youip:8080
 
 注：执行`python manage.py DNServerd --run stop` 关闭DNS Server
+
+# 更新日志
+
+2018年10月24日：添加，16进制解码功能。
+![](demo/Selection_222.png)
+![](demo/Selection_223.png)
