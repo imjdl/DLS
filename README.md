@@ -1,39 +1,39 @@
-# 说明
-DNS Log Server是用来记录DNS 解析记录。
+# 說明
+DNS Log Server是用來記錄DNS 解析記錄。
 
-本应用启动前应先启动DNS Server守护进程, 并进行监听53端口。
-在接收到DNS请求时，会记录在数据库中，并返回一个的响应包。
-仅在linux环境下运行
+本應用啟動前應先啟動DNS Server守護進程, 並進行監聽53端口。
+在接收到DNS請求時，會記錄在數據庫中，並返回一個的響應包。
+僅在linux環境下運行
 
-# 安装
+# 安裝
 ```
 git clone git@github.com:imjdl/DLS.git
 cd DLS
 pip install requerments.txt
 ```
 # 使用
-1. 启动DNS服务
+1. 啟動DNS服務
 
-     在settings.py 里将DNSHOST改为你的VPS IP
-     
-    `python manage.py DNServerd --run start`
-2. 迁移数据
-    
-    `python manage.py migrate`
-3. 启动Web页面
+     在settings.py 裡將DNSHOST改為你的VPS IP
+     
+    `python manage.py DNServerd --run start`
+2. 遷移數據
+    
+    `python manage.py migrate`
+3. 啟動Web頁面
 
-    `python manage.py runserver 0.0.0.0:8080`
+    `python manage.py runserver 0.0.0.0:8080`
 
-4. 访问 http://youip:8080
+4. 訪問 http://youip:8080
 
-注：执行`python manage.py DNServerd --run stop` 关闭DNS Server
+注：執行`python manage.py DNServerd --run stop` 關閉DNS Server
 
-# 更新日志
+# 更新日誌
 
-2018年10月24日：添加，16进制解码功能。
+2018年10月24日：添加，16進制解碼功能。
 ![](demo/Selection_222.png)
 ![](demo/Selection_223.png)
 
-# 相关文章
+# 相關文章
 
 https://blog.0dayhub.ga/2018/10/24/DNS-LOG/
